@@ -1,0 +1,19 @@
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+
+#!/bin/sh
+
+while true; do
+if ping -c 1 1.1.1.1 &> /dev/null
+then
+  echo "Internet UP"
+  echo "none" > /sys/class/leds/orange:wan/trigger
+  echo "default-on" > /sys/class/leds/green:wan/trigger
+else
+  echo "none" > /sys/class/leds/green:wan/trigger
+  echo "default-on" > /sys/class/leds/orange:wan/trigger
+fi
+sleep 5
+done
+
+exit 0
