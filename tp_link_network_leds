@@ -3,17 +3,24 @@
 
 #!/bin/sh
 
-while true; do
-if ping -c 1 1.1.1.1 &> /dev/null
-then
-  echo "Internet UP"
-  echo "none" > /sys/class/leds/orange:wan/trigger
-  echo "default-on" > /sys/class/leds/green:wan/trigger
-else
-  echo "none" > /sys/class/leds/green:wan/trigger
-  echo "default-on" > /sys/class/leds/orange:wan/trigger
-fi
-sleep 5
-done
+echo "default-on" > /sys/class/leds/green:power/trigger
+echo "default-on" > /sys/class/leds/green:lan/trigger
+echo "default-on" > /sys/class/leds/green:wlan2g/trigger
+echo "none" > /sys/class/leds/green:wlan5g/trigger
+echo "none" > /sys/class/leds/green:wan/trigger
+echo "default-on" > /sys/class/leds/orange:wan/trigger
 
+while true; do
+    if ping -c 1 208.67.222.222 | grep -q ' 0% packet'
+    then
+        echo "Internet UP"
+        echo "none" > /sys/class/leds/orange:wan/trigger
+        echo "default-on" > /sys/class/leds/green:wan/trigger
+    else
+        echo "Internet DOWN"
+        echo "none" > /sys/class/leds/green:wan/trigger
+        echo "default-on" > /sys/class/leds/orange:wan/trigger
+    fi
+    sleep 5
+done
 exit 0
