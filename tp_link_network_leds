@@ -1,7 +1,7 @@
 # Put your custom commands here that should be executed once
 # the system init finished. By default this file does nothing.
 
-#!/bin/sh
+#!/bin/ash
 
 echo "default-on" > /sys/class/leds/green:power/trigger
 echo "default-on" > /sys/class/leds/green:lan/trigger
@@ -10,17 +10,54 @@ echo "none" > /sys/class/leds/green:wlan5g/trigger
 echo "none" > /sys/class/leds/green:wan/trigger
 echo "default-on" > /sys/class/leds/orange:wan/trigger
 
+address1="google.com"
+address2="openwrt.org"
+address3="openai.org"
+address4="microsoft.com"
+address5="facebook.com"
+address6="wikipedia.org"
+address7="amazon.com"
+address8="twitter.com"
+address9="linkedin.com"
+address10="instagram.com"
+address11="reddit.com"
+address12="stackoverflow.com"
+
 while true; do
-    if ping -c 1 208.67.222.222 | grep -q ' 0% packet'
-    then
-        echo "Internet UP"
-        echo "none" > /sys/class/leds/orange:wan/trigger
-        echo "default-on" > /sys/class/leds/green:wan/trigger
+    random_index=$((RANDOM % 12))
+
+    case $random_index in
+        0) address=$address1;;
+        1) address=$address2;;
+        2) address=$address3;;
+        3) address=$address4;;
+        4) address=$address5;;
+        5) address=$address6;;
+        6) address=$address7;;
+        7) address=$address8;;
+        8) address=$address9;;
+        9) address=$address10;;
+        10) address=$address11;;
+        11) address=$address12;;
+    esac
+
+    if ping -c 1 "$address" | grep -q -E ' 0% packet|bad address'; then
+        if [ "$?" -eq 0 ]; then
+            echo "Internet UP"
+            echo "none" > /sys/class/leds/orange:wan/trigger
+            echo "default-on" > /sys/class/leds/green:wan/trigger
+        else
+            echo "Internet DOWN: bad network"
+            echo "none" > /sys/class/leds/green:wan/trigger
+            echo "default-on" > /sys/class/leds/orange:wan/trigger
+        fi
     else
         echo "Internet DOWN"
         echo "none" > /sys/class/leds/green:wan/trigger
         echo "default-on" > /sys/class/leds/orange:wan/trigger
     fi
+
     sleep 5
 done
+
 exit 0
