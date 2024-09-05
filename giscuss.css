@@ -1,0 +1,122 @@
+/*!
+ * Modified from GitHub's Dark Dimmed theme, licensed under the MIT License
+ * Copyright (c) 2018 GitHub Inc.
+ * https://github.com/primer/primitives/blob/main/LICENSE
+ */
+main{
+  --color-prettylights-syntax-comment:#b0b2c3; /* Light gray for text */
+  --color-prettylights-syntax-constant:#4db8b6; /* Primary color */
+  --color-prettylights-syntax-entity:#4db8b6; /* Primary color */
+  --color-prettylights-syntax-storage-modifier-import:#b0b2c3; /* Light gray */
+  --color-prettylights-syntax-entity-tag:#f3d250; /* Muted yellow */
+  --color-prettylights-syntax-keyword:#f3d250; /* Muted yellow */
+  --color-prettylights-syntax-string:#e8eaf4; /* Near-white */
+  --color-prettylights-syntax-variable:#f3d250; /* Muted yellow */
+  --color-prettylights-syntax-brackethighlighter-unmatched:#f3d250; /* Muted yellow */
+  --color-prettylights-syntax-invalid-illegal-text:#e8eaf4; /* Near-white */
+  --color-prettylights-syntax-invalid-illegal-bg:#1d1f30; /* Background color */
+  --color-prettylights-syntax-carriage-return-text:#e8eaf4; /* Near-white */
+  --color-prettylights-syntax-carriage-return-bg:#333546; /* Surface color */
+  --color-prettylights-syntax-string-regexp:#4db8b6; /* Primary color */
+  --color-prettylights-syntax-markup-list:#f3d250; /* Muted yellow */
+  --color-prettylights-syntax-markup-heading:#4db8b6; /* Primary color */
+  --color-prettylights-syntax-markup-italic:#b0b2c3; /* Light gray */
+  --color-prettylights-syntax-markup-bold:#b0b2c3; /* Light gray */
+  --color-prettylights-syntax-markup-deleted-text:#e8eaf4; /* Near-white */
+  --color-prettylights-syntax-markup-deleted-bg:#1d1f30; /* Background color */
+  --color-prettylights-syntax-markup-inserted-text:#e8eaf4; /* Near-white */
+  --color-prettylights-syntax-markup-inserted-bg:#1d1f30; /* Background color */
+  --color-prettylights-syntax-markup-changed-text:#f3d250; /* Muted yellow */
+  --color-prettylights-syntax-markup-changed-bg:#333546; /* Surface color */
+  --color-prettylights-syntax-markup-ignored-text:#b0b2c3; /* Light gray */
+  --color-prettylights-syntax-markup-ignored-bg:#4db8b6; /* Primary color */
+  --color-prettylights-syntax-meta-diff-range:#4db8b6; /* Primary color */
+  --color-prettylights-syntax-brackethighlighter-angle:#b0b2c3; /* Light gray */
+  --color-prettylights-syntax-sublimelinter-gutter-mark:#3f4254; /* Mid-tone gray */
+  --color-prettylights-syntax-constant-other-reference-link:#e8eaf4; /* Near-white */
+  --color-btn-text:#b0b2c3; /* Light gray */
+  --color-btn-bg:#333546; /* Surface color */
+  --color-btn-border:#1d1f30; /* Background color */
+  --color-btn-shadow:0 0 #0000; /* No shadow */
+  --color-btn-inset-shadow:0 0 #0000; /* No shadow */
+  --color-btn-hover-bg:#3f4254; /* Mid-tone gray */
+  --color-btn-hover-border:#b0b2c3; /* Light gray */
+  --color-btn-active-bg:#1d1f30; /* Background color */
+  --color-btn-active-border:#333546; /* Surface color */
+  --color-btn-selected-bg:#333546; /* Surface color */
+  --color-btn-primary-text:#e8eaf4; /* Near-white */
+  --color-btn-primary-bg:#4db8b6; /* Primary color */
+  --color-btn-primary-border:#1d1f30; /* Background color */
+  --color-btn-primary-shadow:0 0 #0000; /* No shadow */
+  --color-btn-primary-inset-shadow:0 0 #0000; /* No shadow */
+  --color-btn-primary-hover-bg:#4db8b6; /* Primary color */
+  --color-btn-primary-hover-border:#1d1f30; /* Background color */
+  --color-btn-primary-selected-bg:#4db8b6; /* Primary color */
+  --color-btn-primary-selected-shadow:0 0 #0000; /* No shadow */
+  --color-btn-primary-disabled-text:#b0b2c3; /* Light gray */
+  --color-btn-primary-disabled-bg:#4db8b699; /* Primary color (transparent) */
+  --color-btn-primary-disabled-border:#1d1f30; /* Background color */
+  --color-action-list-item-default-hover-bg:#4db8b615; /* Teal highlight */
+  --color-segmented-control-bg:#333546; /* Surface color */
+  --color-segmented-control-button-bg:#1d1f30; /* Background color */
+  --color-segmented-control-button-selected-border:#333546; /* Surface color */
+  --color-fg-default:#b0b2c3; /* Light gray */
+  --color-fg-muted:#b0b2c3; /* Light gray */
+  --color-fg-subtle:#3f4254; /* Mid-tone gray */
+  --color-canvas-default:#1d1f30; /* Background color */
+  --color-canvas-overlay:#1d1f30; /* Background color */
+  --color-canvas-inset:#1d1f30; /* Background color */
+  --color-canvas-subtle:#333546; /* Surface color */
+  --color-border-default:#3f4254; /* Mid-tone gray */
+  --color-border-muted:#333546; /* Surface color */
+  --color-neutral-muted:#333546; /* Surface color */
+  --color-accent-fg:#4db8b6; /* Primary color */
+  --color-accent-emphasis:#4db8b6; /* Primary color */
+  --color-accent-muted:#4db8b6; /* Primary color */
+  --color-accent-subtle:#4db8b615; /* Teal highlight */
+  --color-success-fg:#4db8b6; /* Primary color */
+  --color-attention-fg:#f3d250; /* Muted yellow */
+  --color-attention-muted:#f3d250; /* Muted yellow */
+  --color-attention-subtle:#f3d25026; /* Muted yellow (transparent) */
+  --color-danger-fg:#f3d250; /* Muted yellow */
+  --color-danger-muted:#f3d25066; /* Muted yellow */
+  --color-danger-subtle:#f3d2501a; /* Muted yellow (transparent) */
+  --color-primer-shadow-inset:0 0 #0000; /* No shadow */
+  --color-scale-gray-7:#333546; /* Surface color */
+  --color-scale-blue-8:#4db8b6; /* Primary color */
+
+  /*! Extensions from @primer/css/alerts/flash.scss */
+  --color-social-reaction-bg-hover:var(--color-scale-gray-7); /* Surface color */
+  --color-social-reaction-bg-reacted-hover:var(--color-scale-blue-8); /* Primary color */
+}
+
+main .pagination-loader-container{
+  background-image:url(https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg);
+}
+
+/*! Custom CSS */
+.gsc-reactions-count{
+  display:none;
+}
+.gsc-timeline{
+  flex-direction:column-reverse;
+}
+.gsc-header{
+  padding-bottom:1rem;
+}
+.gsc-comments>.gsc-header{
+  order:1;
+}
+.gsc-comments>.gsc-comment-box{
+  margin-bottom:1rem;
+  order:2;
+}
+.gsc-comments>.gsc-timeline{
+  order:3;
+}
+.gsc-homepage-bg{
+  background-color:#1d1f30; /* Background color */
+}
+main .gsc-loading-image{
+  background-image:url(https://github.githubassets.com/images/mona-loading-dimmed.gif);
+}
